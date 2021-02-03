@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+
+
+	<bean id="myDao" class="org.formation.dao.FileDAO">
+		<property name="file" value="org/formation/service/movie.txt" />
+	</bean>
+
+	<bean id="myLister" class="org.formation.service.MovieLister" init-method="init" scope="prototype">
+		<!-- <property name="finder" ref="myDao" /> -->
+		<constructor-arg ref="myDao" />
+	</bean>
+
+
+</beans>

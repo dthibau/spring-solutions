@@ -1,0 +1,24 @@
+spring:
+  jpa:
+    show-sql: true
+    
+    
+    
+---
+spring:
+  profiles: prod
+
+
+  datasource:
+    url: jdbc:postgresql://localhost:5434/f_movie
+    username: postgres
+    password: postgres
+    hikari:
+      connection-timeout: 10000
+      maximum-pool-size: 10
+      minimum-idle: 5
+    
+  jpa:
+    hibernate:
+      ddl-auto: update
+

@@ -1,0 +1,25 @@
+hello:
+  greeting: "Bonjour"
+  style: uppercase
+  case-type: upper
+  position: 0
+logging:
+  file:
+    name: server.log
+    path: .
+  level:
+    org:
+      formation: info
+    root: info
+
+
+app:
+  random: ${random.uuid}
+
+
+---
+spring:
+  profiles: prod
+
+server:
+  port: 8000
